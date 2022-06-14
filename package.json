@@ -1,0 +1,22 @@
+{
+  "name": "@chocostack/react-native-button-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ButtonPackage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chocostack/react-native-button-package.git"
+  },
+  "keywords": [
+    "buttons"
+  ],
+  "author": "chocostack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chocostack/react-native-button-package/issues"
+  },
+  "homepage": "https://github.com/chocostack/react-native-button-package#readme"
+}
