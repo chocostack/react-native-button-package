@@ -73,7 +73,7 @@ export class DarkButton extends Component {
             <TouchableWithoutFeedback onPress={() => {
                 if (!this.props.disabled)
                     this.props.onPress();
-            }}}>
+            }}>
                 <View style={[{
                     backgroundColor: '#404040',
                     paddingTop: 5,
