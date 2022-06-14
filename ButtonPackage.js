@@ -15,7 +15,10 @@ export default class DefaultButton extends Component {
         }
 
         return (
-            <TouchableWithoutFeedback onPress={this.props.onPress}>
+            <TouchableWithoutFeedback onPress={() => {
+                if (!this.props.disabled)
+                    this.props.onPress();
+            }}>
                 <View style={[{
                     borderColor: '#404040',
                     borderWidth: 1,
@@ -67,7 +70,10 @@ export class DarkButton extends Component {
 
 
         return (
-            <TouchableWithoutFeedback onPress={this.props.onPress}>
+            <TouchableWithoutFeedback onPress={() => {
+                if (!this.props.disabled)
+                    this.props.onPress();
+            }}}>
                 <View style={[{
                     backgroundColor: '#404040',
                     paddingTop: 5,
