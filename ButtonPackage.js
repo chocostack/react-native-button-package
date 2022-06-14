@@ -8,6 +8,11 @@ export default class DefaultButton extends Component {
     }
 
     render() {
+        let disabledStyle = {};
+
+        if (this.props.disabled) {
+            disabledStyle = { opacity: 0.5 }
+        }
 
         return (
             <TouchableWithoutFeedback onPress={this.props.onPress}>
@@ -20,7 +25,8 @@ export default class DefaultButton extends Component {
                     paddingBottom: 5,
                     borderRadius: 8,
                     backgroundColor: 'white',
-                    flexDirection: 'row'
+                    flexDirection: 'row',
+                    ...disabledStyle
                 }, this.props.style]}>
                     {this.props.loading ?
                         <ActivityIndicator size={16} color={'#404040'} />
@@ -53,6 +59,12 @@ export class DarkButton extends Component {
     }
 
     render() {
+        let disabledStyle = {};
+
+        if (this.props.disabled) {
+            disabledStyle = { opacity: 0.5 }
+        }
+
 
         return (
             <TouchableWithoutFeedback onPress={this.props.onPress}>
@@ -63,7 +75,8 @@ export class DarkButton extends Component {
                     paddingRight: 7,
                     paddingBottom: 5,
                     borderRadius: 8,
-                    flexDirection: 'row'
+                    flexDirection: 'row',
+                    ...disabledStyle
                 }, this.props.style]}>
                     {this.props.icon ?
                         this.props.icon
