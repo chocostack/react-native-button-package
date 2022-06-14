@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback, ActivityIndicator } from 'react-native';
 
 export default class DefaultButton extends Component {
 
