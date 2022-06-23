@@ -14,8 +14,7 @@ export default class DefaultButton extends Component {
             disabledStyle = { opacity: 0.5 }
         }
 
-        return (
-            <TouchableWithoutFeedback onPress={() => {
+        return <TouchableWithoutFeedback onPress={() => {
                 if (!this.props.disabled)
                     this.props.onPress();
             }}>
@@ -49,8 +48,7 @@ export default class DefaultButton extends Component {
                         {this.props.text}
                     </Text>
                 </View>
-            </TouchableWithoutFeedback>
-        );
+            </TouchableWithoutFeedback>;
     }
 
 }
@@ -69,8 +67,7 @@ export class DarkButton extends Component {
         }
 
 
-        return (
-            <TouchableWithoutFeedback onPress={() => {
+        return <TouchableWithoutFeedback onPress={() => {
                 if (!this.props.disabled)
                     this.props.onPress();
             }}>
@@ -97,8 +94,7 @@ export class DarkButton extends Component {
                         {this.props.text}
                     </Text>
                 </View>
-            </TouchableWithoutFeedback>
-        );
+            </TouchableWithoutFeedback>;
     }
 
 }
