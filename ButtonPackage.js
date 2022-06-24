@@ -21,17 +21,14 @@ export default class DefaultButton extends Component {
                 <View style={[{
                     borderColor: '#404040',
                     borderWidth: 1,
-                    paddingTop: 5,
-                    paddingLeft: 7,
-                    paddingRight: 7,
-                    paddingBottom: 5,
+                    padding: 8,
                     borderRadius: 8,
                     backgroundColor: 'white',
                     flexDirection: 'row',
                     ...disabledStyle
                 }, this.props.style]}>
                     {this.props.loading ?
-                        <ActivityIndicator size={16} color={'#404040'} />
+                        <ActivityIndicator size={18} color={'#404040'} />
                         :
                         null
                     }
@@ -44,7 +41,7 @@ export default class DefaultButton extends Component {
                         </View>
                         :
                         null}
-                    <Text style={{ fontSize: 12, color: '#404040', ...this.props.textStyle }}>
+                    <Text style={{ fontSize: 15, color: '#404040', ...this.props.textStyle }}>
                         {this.props.text}
                     </Text>
                 </View>
@@ -73,10 +70,7 @@ export class DarkButton extends Component {
             }}>
                 <View style={[{
                     backgroundColor: '#404040',
-                    paddingTop: 5,
-                    paddingLeft: 7,
-                    paddingRight: 7,
-                    paddingBottom: 5,
+                    padding: 8,
                     borderRadius: 8,
                     flexDirection: 'row',
                     ...disabledStyle
@@ -90,7 +84,7 @@ export class DarkButton extends Component {
                         </View>
                         :
                         null}
-                    <Text style={{ color: 'white', fontSize: 12, ...this.props.textStyle }}>
+                    <Text style={{ color: 'white', fontSize: 15, ...this.props.textStyle }}>
                         {this.props.text}
                     </Text>
                 </View>
