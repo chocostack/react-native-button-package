@@ -123,6 +123,10 @@ export class QuantityPicker extends Component {
             }}>
             <TouchableWithoutFeedback
                 onPress={() => {
+                    if(this.state.quantity == 1){
+                        return;
+                    }
+
                     const quantity = this.state.quantity - 1;
 
                     this.setState({
