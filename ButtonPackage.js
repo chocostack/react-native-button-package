@@ -49,7 +49,7 @@ export default class DefaultButton extends Component {
     }
 
 }
-CCText
+
 export class DarkButton extends Component {
 
     constructor(props) {
