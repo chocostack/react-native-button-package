@@ -49,7 +49,7 @@ export default class DefaultButton extends Component {
     }
 
 }
-
+CCText
 export class DarkButton extends Component {
 
     constructor(props) {
@@ -94,6 +94,92 @@ export class DarkButton extends Component {
                 </Text>
             </View>
         </TouchableWithoutFeedback>;
+    }
+
+}
+
+export class QuantityPicker extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            quantity: props.quantity
+        }
+    }
+
+    render() {
+        let disabledMinusStyle = {};
+
+        if (this.state.quantity == 1) {
+            disabledMinusStyle = { opacity: 0.5 }
+        }
+
+
+        return <View style={{ 
+                flexDirection: 'row', 
+                justifyContent: 'flex-end', 
+                ...this.props.style 
+            }}>
+            <TouchableWithoutFeedback
+                onPress={() => {
+                    const quantity = this.state.quantity - 1;
+
+                    this.setState({
+                        quantity: quantity
+                    });
+
+                    this.props.onChange(quantity);
+                }}
+            >
+                <Text style={{
+                    color: '#404040',
+                    borderBottomLeftRadius: 7,
+                    borderTopLeftRadius: 7,
+                    backgroundColor: '#DDDDDD',
+                    padding: 13,
+                    paddingTop: 2,
+                    paddingBottom: 2,
+                    fontSize: 23,
+                    ...disabledMinusStyle
+                }}>
+                    -
+                </Text>
+            </TouchableWithoutFeedback>
+            <Text style={{
+                color: '#404040',
+                backgroundColor: '#DDDDDD',
+                padding: 13,
+                paddingTop: 7,
+                paddingBottom: 7,
+            }}>
+                {this.state.quantity}
+            </Text>
+            <TouchableWithoutFeedback
+                onPress={() => {
+                    const quantity = this.state.quantity + 1;
+
+                    this.setState({
+                        quantity: quantity
+                    });
+
+                    this.props.onChange(quantity);
+                }}
+            >
+                <Text style={{
+                    color: '#404040',
+                    borderBottomRightRadius: 7,
+                    borderTopRightRadius: 7,
+                    backgroundColor: '#DDDDDD',
+                    padding: 13,
+                    paddingTop: 2,
+                    paddingBottom: 2,
+                    fontSize: 23
+                }}>
+                    +
+                </Text>
+            </TouchableWithoutFeedback>
+        </View>;
     }
 
 }
