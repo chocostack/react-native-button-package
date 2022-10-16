@@ -185,5 +185,36 @@ export class QuantityPicker extends Component {
             </TouchableWithoutFeedback>
         </View>;
     }
+}
+
+export default class FloatingButton extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+
+        return (
+            <View style={{ position: 'absolute', right: 25, bottom: 50, borderRadius: 60 / 2 }}>
+                <TouchableWithoutFeedback onPress={this.props.onPress} >
+                    <View style={{
+                        width: 60,
+                        height: 60,
+                        borderRadius: 60 / 2,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: '#404040',
+                        elevation: 3
+                    }}>
+                        {this.props.icon ?
+                            this.props.icon
+                            :
+                            null}
+                    </View>
+                </TouchableWithoutFeedback>
+            </View>
+        );
+    }
 
 }
