@@ -187,7 +187,7 @@ export class QuantityPicker extends Component {
     }
 }
 
-export default class FloatingButton extends Component {
+export class FloatingButton extends Component {
 
     constructor(props) {
         super(props);
