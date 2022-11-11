@@ -98,6 +98,100 @@ export class DarkButton extends Component {
 
 }
 
+export class BlueButton extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let disabledStyle = {};
+
+        if (this.props.disabled) {
+            disabledStyle = { opacity: 0.5 }
+        }
+
+
+        return <TouchableWithoutFeedback onPress={() => {
+            if (!this.props.disabled)
+                this.props.onPress();
+        }}>
+            <View style={[{
+                backgroundColor: '#037C87',
+                padding: 8,
+                borderRadius: 8,
+                flexDirection: 'row',
+                ...disabledStyle
+            }, this.props.style]}>
+                {this.props.loading ?
+                    <ActivityIndicator size={18} color={'white'} />
+                    :
+                    null
+                }
+                {this.props.icon ?
+                    this.props.icon
+                    :
+                    null}
+                {this.props.icon && this.props.text ?
+                    <View style={{ width: 5 }}>
+                    </View>
+                    :
+                    null}
+                <Text style={{ color: 'white', fontSize: 15, ...this.props.textStyle }}>
+                    {this.props.text}
+                </Text>
+            </View>
+        </TouchableWithoutFeedback>;
+    }
+}
+
+export class RedButton extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let disabledStyle = {};
+
+        if (this.props.disabled) {
+            disabledStyle = { opacity: 0.5 }
+        }
+
+
+        return <TouchableWithoutFeedback onPress={() => {
+            if (!this.props.disabled)
+                this.props.onPress();
+        }}>
+            <View style={[{
+                backgroundColor: '#DD0D02',
+                padding: 8,
+                borderRadius: 8,
+                flexDirection: 'row',
+                ...disabledStyle
+            }, this.props.style]}>
+                {this.props.loading ?
+                    <ActivityIndicator size={18} color={'white'} />
+                    :
+                    null
+                }
+                {this.props.icon ?
+                    this.props.icon
+                    :
+                    null}
+                {this.props.icon && this.props.text ?
+                    <View style={{ width: 5 }}>
+                    </View>
+                    :
+                    null}
+                <Text style={{ color: 'white', fontSize: 15, ...this.props.textStyle }}>
+                    {this.props.text}
+                </Text>
+            </View>
+        </TouchableWithoutFeedback>;
+    }
+}
+
 export class QuantityPicker extends Component {
 
     constructor(props) {
