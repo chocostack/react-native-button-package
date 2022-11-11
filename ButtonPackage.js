@@ -22,7 +22,7 @@ export default class DefaultButton extends Component {
                 borderColor: '#404040',
                 borderWidth: 1,
                 padding: 8,
-                borderRadius: 8,
+                borderRadius: 6,
                 backgroundColor: 'white',
                 flexDirection: 'row',
                 ...disabledStyle
@@ -71,7 +71,7 @@ export class DarkButton extends Component {
             <View style={[{
                 backgroundColor: '#404040',
                 padding: 8,
-                borderRadius: 8,
+                borderRadius: 6,
                 flexDirection: 'row',
                 ...disabledStyle
             }, this.props.style]}>
@@ -119,7 +119,7 @@ export class BlueButton extends Component {
             <View style={[{
                 backgroundColor: '#037C87',
                 padding: 8,
-                borderRadius: 8,
+                borderRadius: 6,
                 flexDirection: 'row',
                 ...disabledStyle
             }, this.props.style]}>
@@ -166,7 +166,7 @@ export class RedButton extends Component {
             <View style={[{
                 backgroundColor: '#DD0D02',
                 padding: 8,
-                borderRadius: 8,
+                borderRadius: 6,
                 flexDirection: 'row',
                 ...disabledStyle
             }, this.props.style]}>
