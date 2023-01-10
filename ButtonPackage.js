@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableWithoutFeedback, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 
 export default class DefaultButton extends Component {
 
@@ -14,7 +14,7 @@ export default class DefaultButton extends Component {
             disabledStyle = { opacity: 0.5 }
         }
 
-        return <TouchableWithoutFeedback onPress={() => {
+        return <TouchableOpacity onPress={() => {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
@@ -45,7 +45,7 @@ export default class DefaultButton extends Component {
                     {this.props.text}
                 </Text>
             </View>
-        </TouchableWithoutFeedback>;
+        </TouchableOpacity>;
     }
 
 }
@@ -64,7 +64,7 @@ export class DarkButton extends Component {
         }
 
 
-        return <TouchableWithoutFeedback onPress={() => {
+        return <TouchableOpacity onPress={() => {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
@@ -93,7 +93,7 @@ export class DarkButton extends Component {
                     {this.props.text}
                 </Text>
             </View>
-        </TouchableWithoutFeedback>;
+        </TouchableOpacity>;
     }
 
 }
@@ -112,7 +112,7 @@ export class BlueButton extends Component {
         }
 
 
-        return <TouchableWithoutFeedback onPress={() => {
+        return <TouchableOpacity onPress={() => {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
@@ -141,7 +141,7 @@ export class BlueButton extends Component {
                     {this.props.text}
                 </Text>
             </View>
-        </TouchableWithoutFeedback>;
+        </TouchableOpacity>;
     }
 }
 
@@ -159,7 +159,7 @@ export class RedButton extends Component {
         }
 
 
-        return <TouchableWithoutFeedback onPress={() => {
+        return <TouchableOpacity onPress={() => {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
@@ -188,7 +188,7 @@ export class RedButton extends Component {
                     {this.props.text}
                 </Text>
             </View>
-        </TouchableWithoutFeedback>;
+        </TouchableOpacity>;
     }
 }
 
@@ -215,7 +215,7 @@ export class QuantityPicker extends Component {
                 justifyContent: 'flex-end', 
                 ...this.props.style 
             }}>
-            <TouchableWithoutFeedback
+            <TouchableOpacity
                 onPress={() => {
                     if(this.state.quantity == 1){
                         return;
@@ -243,7 +243,7 @@ export class QuantityPicker extends Component {
                 }}>
                     -
                 </Text>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
             <Text style={{
                 color: '#404040',
                 backgroundColor: '#DDDDDD',
@@ -253,7 +253,7 @@ export class QuantityPicker extends Component {
             }}>
                 {this.state.quantity}
             </Text>
-            <TouchableWithoutFeedback
+            <TouchableOpacity
                 onPress={() => {
                     const quantity = this.state.quantity + 1;
 
@@ -276,7 +276,7 @@ export class QuantityPicker extends Component {
                 }}>
                     +
                 </Text>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
         </View>;
     }
 }
@@ -291,7 +291,7 @@ export class FloatingButton extends Component {
 
         return (
             <View style={{ position: 'absolute', right: 25, bottom: 50, borderRadius: 60 / 2 }}>
-                <TouchableWithoutFeedback onPress={this.props.onPress} >
+                <TouchableOpacity onPress={this.props.onPress} >
                     <View style={{
                         width: 60,
                         height: 60,
@@ -306,7 +306,7 @@ export class FloatingButton extends Component {
                             :
                             null}
                     </View>
-                </TouchableWithoutFeedback>
+                </TouchableOpacity>
             </View>
         );
     }
