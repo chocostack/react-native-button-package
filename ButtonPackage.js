@@ -41,7 +41,7 @@ export default class DefaultButton extends Component {
                     </View>
                     :
                     null}
-                <Text style={{ fontSize: 15, color: '#404040', ...this.props.textStyle }}>
+                <Text style={{ fontSize: 18, color: '#404040', ...this.props.textStyle }}>
                     {this.props.text}
                 </Text>
             </View>
@@ -89,7 +89,55 @@ export class DarkButton extends Component {
                     </View>
                     :
                     null}
-                <Text style={{ color: 'white', fontSize: 15, ...this.props.textStyle }}>
+                <Text style={{ color: 'white', fontSize: 18, ...this.props.textStyle }}>
+                    {this.props.text}
+                </Text>
+            </View>
+        </TouchableOpacity>;
+    }
+
+}
+
+export class ThemeButton extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let disabledStyle = {};
+
+        if (this.props.disabled) {
+            disabledStyle = { opacity: 0.5 }
+        }
+
+
+        return <TouchableOpacity onPress={() => {
+            if (!this.props.disabled)
+                this.props.onPress();
+        }}>
+            <View style={[{
+                backgroundColor: '#f05423',
+                padding: 8,
+                borderRadius: 6,
+                flexDirection: 'row',
+                ...disabledStyle
+            }, this.props.style]}>
+                {this.props.loading ?
+                    <ActivityIndicator size={18} color={'white'} />
+                    :
+                    null
+                }
+                {this.props.icon ?
+                    this.props.icon
+                    :
+                    null}
+                {this.props.icon && this.props.text ?
+                    <View style={{ width: 5 }}>
+                    </View>
+                    :
+                    null}
+                <Text style={{ color: 'white', fontSize: 18, ...this.props.textStyle }}>
                     {this.props.text}
                 </Text>
             </View>
@@ -137,7 +185,7 @@ export class BlueButton extends Component {
                     </View>
                     :
                     null}
-                <Text style={{ color: 'white', fontSize: 15, ...this.props.textStyle }}>
+                <Text style={{ color: 'white', fontSize: 18, ...this.props.textStyle }}>
                     {this.props.text}
                 </Text>
             </View>
@@ -184,7 +232,7 @@ export class RedButton extends Component {
                     </View>
                     :
                     null}
-                <Text style={{ color: 'white', fontSize: 15, ...this.props.textStyle }}>
+                <Text style={{ color: 'white', fontSize: 18, ...this.props.textStyle }}>
                     {this.props.text}
                 </Text>
             </View>
