@@ -50,6 +50,53 @@ export default class DefaultButton extends Component {
 
 }
 
+export class BorderlessButton extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let disabledStyle = {};
+
+        if (this.props.disabled) {
+            disabledStyle = { opacity: 0.5 }
+        }
+
+        return <TouchableOpacity
+            className={'clickable react-button ' + this.props.className}
+            onPress={() => {
+                if (!this.props.disabled && this.props.onPress)
+                    this.props.onPress();
+            }}
+            to={this.props.to}
+        >
+            <View
+                style={{
+                    padding: '6px 8px',
+                    flexDirection: 'row',
+                    justifyContent: this.props.alignText ? this.props.alignText : 'center',
+                    ...this.props.style,
+                    ...disabledStyle
+                }}>
+                {this.props.icon ?
+                    this.props.icon
+                    :
+                    null}
+                {this.props.icon && this.props.text ?
+                    <View style={{ width: 5 }}>
+                    </View>
+                    :
+                    null}
+                <Text style={{ fontSize: 18, color: '#404040', textAlign: 'center', ...this.props.textStyle }}>
+                    {this.props.text}
+                </Text>
+            </View>
+        </TouchableOpacity>;
+    }
+
+}
+
 export class DarkButton extends Component {
 
     constructor(props) {
