@@ -73,7 +73,7 @@ export class BorderlessButton extends Component {
         >
             <View
                 style={{
-                    padding: '6px 8px',
+                    padding: 8,
                     flexDirection: 'row',
                     justifyContent: this.props.alignText ? this.props.alignText : 'center',
                     ...this.props.style,
