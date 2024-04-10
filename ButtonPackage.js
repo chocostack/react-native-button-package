@@ -153,9 +153,16 @@ export class ThemeButton extends Component {
 
     render() {
         let disabledStyle = {};
+        let textStyle = {};
 
         if (this.props.disabled) {
-            disabledStyle = { opacity: 0.5 }
+            disabledStyle = {
+                backgroundColor: '#CCCCCC',
+                boxShadow: 'none'
+            }
+            textStyle = {
+                color: 'gray'
+            }
         }
 
 
@@ -184,7 +191,7 @@ export class ThemeButton extends Component {
                     </View>
                     :
                     null}
-                <Text style={{ color: 'white', fontSize: 18, ...this.props.textStyle }}>
+                <Text style={{ color: 'white', fontSize: 18, ...this.props.textStyle, ...textStyle }}>
                     {this.props.text}
                 </Text>
             </View>
