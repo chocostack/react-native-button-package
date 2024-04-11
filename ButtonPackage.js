@@ -440,10 +440,10 @@ export class TagButton extends Component {
             }}
         >
             <View style={{
-                paddingLeft: 3,
-                paddingRight: 3,
-                paddingTop: 10,
-                paddingBottom: 10,
+                paddingLeft: 10,
+                paddingRight: 10,
+                paddingTop: 3,
+                paddingBottom: 3,
                 borderRadius: 25,
                 backgroundColor: '#404040',
                 flexDirection: 'row',
