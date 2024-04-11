@@ -18,15 +18,16 @@ export default class DefaultButton extends Component {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
-            <View style={[{
+            <View style={{
                 borderColor: '#404040',
                 borderWidth: 1,
                 padding: 8,
                 borderRadius: 6,
                 backgroundColor: 'white',
                 flexDirection: 'row',
+                ...this.props.style,
                 ...disabledStyle
-            }, this.props.style]}>
+            }}>
                 {this.props.loading ?
                     <ActivityIndicator size={18} color={'#404040'} />
                     :
@@ -115,13 +116,14 @@ export class DarkButton extends Component {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
-            <View style={[{
+            <View style={{
                 backgroundColor: '#404040',
                 padding: 8,
                 borderRadius: 6,
                 flexDirection: 'row',
+                ...this.props.style,
                 ...disabledStyle
-            }, this.props.style]}>
+            }}>
                 {this.props.loading ?
                     <ActivityIndicator size={18} color={'white'} />
                     :
@@ -170,13 +172,14 @@ export class ThemeButton extends Component {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
-            <View style={[{
+            <View style={{
                 backgroundColor: '#f05423',
                 padding: 8,
                 borderRadius: 6,
                 flexDirection: 'row',
+                ...this.props.style,
                 ...disabledStyle
-            }, this.props.style]}>
+            }}>
                 {this.props.loading ?
                     <ActivityIndicator size={18} color={'white'} />
                     :
@@ -218,13 +221,14 @@ export class BlueButton extends Component {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
-            <View style={[{
+            <View style={{
                 backgroundColor: '#037C87',
                 padding: 8,
                 borderRadius: 6,
                 flexDirection: 'row',
+                ...this.props.style,
                 ...disabledStyle
-            }, this.props.style]}>
+            }}>
                 {this.props.loading ?
                     <ActivityIndicator size={18} color={'white'} />
                     :
@@ -265,13 +269,14 @@ export class RedButton extends Component {
             if (!this.props.disabled)
                 this.props.onPress();
         }}>
-            <View style={[{
+            <View style={{
                 backgroundColor: '#DD0D02',
                 padding: 8,
                 borderRadius: 6,
                 flexDirection: 'row',
+                ...this.props.style,
                 ...disabledStyle
-            }, this.props.style]}>
+            }}>
                 {this.props.loading ?
                     <ActivityIndicator size={18} color={'white'} />
                     :
@@ -411,6 +416,60 @@ export class FloatingButton extends Component {
                 </TouchableOpacity>
             </View>
         );
+    }
+
+}
+
+export class TagButton extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        let disabledStyle = {};
+
+        if (this.props.disabled) {
+            disabledStyle = { opacity: 0.5 }
+        }
+
+        return <TouchableOpacity
+            onPress={() => {
+                if (!this.props.disabled && this.props.onPress)
+                    this.props.onPress();
+            }}
+        >
+            <View style={{
+                padding: '3px 10px',
+                borderRadius: '25px',
+                backgroundColor: '#404040',
+                flexDirection: 'row',
+                ...this.props.style,
+                ...disabledStyle
+            }}>
+                {this.props.loading ?
+                    <ActivityIndicator size={18} color={'white'} />
+                    :
+                    null
+                }
+                {this.props.icon ?
+                    this.props.icon
+                    :
+                    null}
+                {this.props.icon && this.props.text ?
+                    <View style={{ width: 5 }}>
+                    </View>
+                    :
+                    null}
+                <Text className={"ws-nowrap"} style={{
+                    fontSize: 16,
+                    color: 'white',
+                    ...this.props.textStyle
+                }}>
+                    {this.props.text}
+                </Text>
+            </View>
+        </TouchableOpacity>;
     }
 
 }
